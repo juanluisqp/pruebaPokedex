@@ -1,4 +1,4 @@
-import { fetchPokemonRequest, FETCH_POKEMON_FAILURE, FETCH_POKEMON_REQUEST, FETCH_POKEMON_SUCCESS } from "../actions/buscadorAction";
+import { FETCH_POKEMON_FAILURE, FETCH_POKEMON_REQUEST, FETCH_POKEMON_SUCCESS } from "../actions/buscadorAction";
 
 const initialState = {
     loading: false,
