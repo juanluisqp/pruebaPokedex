@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background-color: #192a56 !important;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.nombrePokemon {
+  font-family:'Press Start 2P', cursive;
+  font-size: 40px;
+  text-decoration: underline;
+}
