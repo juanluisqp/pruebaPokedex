@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const ResultadoPokemon = () => {
     const buscador = useSelector((state) => state.buscador);
-    console.log(buscador.pokemon)
+    
     return (
         <div>
             <h3 className="text-white">Resultado: </h3>
@@ -11,7 +11,7 @@ const ResultadoPokemon = () => {
             {buscador.pokemon.length >= 1 &&
                 <div className="text-success">
                     <img src={buscador.pokemon[0].sprites.front_default} alt="pokemon" style={{width:200, height:'auto'}} /> 
-                    {buscador.pokemon.length >= 1 && <span class="nombrePokemon">{buscador.pokemon[0].name}</span>}
+                    {buscador.pokemon.length >= 1 && <span className="nombrePokemon">{buscador.pokemon[0].name}</span>}
                 </div>
             }   
             {buscador.error !== '' && <span className="text-danger">Error</span>}

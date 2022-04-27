@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import fetchPokemon from '../../redux/actions/buscadorAction';
+import {fetchPokemon, fetchRandomPokemon} from '../../redux/actions/buscadorAction';
 
 const BuscadorPokemon = () => {
     const dispatch = useDispatch();
@@ -26,13 +26,19 @@ const BuscadorPokemon = () => {
                 }
             }}
             />
-            <button className="btn btn-primary mt-3" onClick={
+            <button className="btn btn-primary mt-3 me-3" onClick={
                 () => {
                     dispatch(fetchPokemon(pokemon_name))
                 }
             }>Buscar</button>
+
+<button className="btn btn-primary mt-3" onClick={
+                () => {
+                    dispatch(fetchRandomPokemon(pokemon_name))
+                }
+            }>Seleccionar Random</button>
         </div>
     )
 }
 
-export default BuscadorPokemon
+export default BuscadorPokemon;

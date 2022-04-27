@@ -26,7 +26,7 @@ export const fetchPokemonFailure = (error) => {
     }
 };
 
-const  fetchPokemon = (value) => {
+export const  fetchPokemon = (value) => {
     return (dispatch) => {
         dispatch(fetchPokemonRequest());
         axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`)
@@ -38,5 +38,21 @@ const  fetchPokemon = (value) => {
             });
     }
 };
-
-export default fetchPokemon;
+export const  fetchRandomPokemon = () => {
+    const randomNumber = () => Math.floor((Math.random() * 899) + 1);
+    
+    
+    return (dispatch) => {
+        dispatch(fetchPokemonRequest());
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber()}`)
+            .then(response => {
+                
+                dispatch(fetchPokemonSuccess([response.data]))
+                
+                
+            })
+            .catch(error => {
+                dispatch(fetchPokemonFailure('No se encontro el pokemon'))
+            });
+    }
+};
